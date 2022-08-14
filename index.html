@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="custom.css">
+    <title>Customer Dashboard App</title>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar py-3 px-5">
+
+        <div class="navbar-brand is-size-4">
+            <a href="#" class="navbar-item">
+                <img src="images/logo2.png">
+                <span><b>MyApp</b></span>
+            </a>
+
+            <a role="button" class="navbar-burger">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+
+        <div class="navbar-end is-align-items-center ">
+        
+            <div class="control has-icons-left m-4">
+                <input class="input" type="text" placeholder="Search">
+                <span class="icon is-small is-left">
+                    <i class="fa fa-search"></i>
+                </span>
+            </div>
+
+            <div class="has-dropdown navbar-item is-hoverable m-4 is-hidden-touch">
+                <a href="#" role="button" class="navbar-link">
+                    <i class="fa fa-user-circle fa-2x mx-2"></i>
+                    <span>John Doe</span>
+                </a>
+
+                <div class="navbar-dropdown py-0">
+                    <a href="#" class="navbar-item py-3"><i class="fa fa-sign-out mr-2"></i> Logout</a>
+                    <a href="#" class="navbar-item py-3"><i class="fa fa-cog mr-2"></i> Settings</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- MAIN SECTION -->
+
+    <main class="container-fluid is-flex" id="main-container">
+
+        <!-- Sidebar -->
+
+        <aside class="menu p-5 column is-3-desktop is-3-tablet is-12-mobile has-background-black is-hidden-touch" style="height: 100vh;" id="aside-menu">
+            <p class="menu-label has-text-light">
+              General
+            </p>
+            <ul class="menu-list">
+              <li><a>Performance</a></li>
+              <li><a class="is-active has-background-info">Customers</a></li>
+              <li><a>Orders</a></li>
+              <li><a>Products</a></li>
+            </ul>
+    
+            <p class="menu-label has-text-light">
+              Transactions
+            </p>
+            <ul class="menu-list">
+              <li><a>Payments</a></li>
+              <li><a>Transfers</a></li>
+              <li><a>Balance</a></li>
+            </ul>
+    
+            <p class="menu-label has-text-light">
+                Administration
+            </p>
+            <ul class="menu-list">
+                <li><a>Profile</a></li>
+                <li><a>History</a></li>
+                <li><a>Authentication</a></li>
+                <li><a class="is-hidden-desktop">Settings</a></li>
+                <li><a class="is-hidden-desktop">Logout</a></li>
+            </ul>
+    
+        </aside>
+
+        <!-- Section  -->
+
+        <section class="container has-background-light section-scroller" style="overflow-x: scroll; height: 100vh;">
+
+            <div class="container m-5">
+                <h1 class="title is-size-5-mobile">Customers</h1>
+
+                <!-- Add Customer Button -->
+                <nav class="navbar is-align-items-center has-background-light">
+                    
+                    <div class="navbar-start">
+                        <button class="button is-info navbar-item is-outlined" id="addBtn"><b>+Add</b></button>
+                    </div>
+                </nav>
+            </div>
+
+            
+            <!-- Customer Table -->
+
+            <div class="table-container m-5" style="overflow-y: scroll; max-height: 55vh;">
+                <table class="table is-narrow is-striped">
+                    <thead>
+                        <tr>
+                            <th><div style="width: 20px;">#</div></th>
+                            <th><div style="width: 120px;">Name</div></th>
+                            <th><div style="width: 120px;">Email</div></th>
+                            <th><div style="width: 120px;">Phone</div></th>
+                            <th><div style="min-width: 250px;">Address</div></th>
+                            <th><div style="width: 100px;">Subscription Plan</div></th>
+                            <th><div style="width: 80px;">Payment Method</div></th>
+                            <th><div style="width: 80px;">Action</div></th>
+            
+                        </tr>   
+                    </thead>
+
+                    <tbody class="table_body">
+                        <tr class="row">
+                            <th>1</th>
+                            <td>Jane Doe</td>
+                            <td>jdoe3@example.com</td>
+                            <td>+263771080978</td>
+                            <td>234 Windsor Park, Salisbury</td>
+                            <td>Premium</td>
+                            <td>Paypal</td>
+                            <td>
+                                <button class="button is-success is-small edt"><i class="fa fa-pencil"></i></button>
+                                <button class="button is-danger is-small del"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr> 
+
+                        <tr class="row">
+                            <th>2</th>
+                            <td>Mark Grayson</td>
+                            <td>mgrayson@example.com</td>
+                            <td>+263772345678</td>
+                            <td>17 Wolf street, New York</td>
+                            <td>Enterprise</td>
+                            <td>BitPay</td>
+                            <td>
+                                <button class="button is-success is-small edt"><i class="fa fa-pencil"></i></button>
+                                <button class="button is-danger is-small del"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr> 
+
+                        <tr class="row">
+                            <th>3</th>
+                            <td>Clark Kent</td>
+                            <td>superKent@example.com</td>
+                            <td>+263773098765</td>
+                            <td>82 Smallville Road, Kentucky</td>
+                            <td>Individual</td>
+                            <td>Cash</td>
+                            <td>
+                                <button class="button is-success is-small edt"><i class="fa fa-pencil"></i></button>
+                                <button class="button is-danger is-small del"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+            
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    
+    </main>
+
+
+
+    <!-- MODAL FORM -->
+
+    <div id="modal-form" class="modal">
+        <div class="modal-background"></div>
+      
+        <div class="modal-content">
+            <div class="box py-5">
+
+                    <h1 class="title is-4 mx-3 has-text-info">CUSTOMER ENTRY FORM</h1>
+
+                    <!-- NAME & EMAIL ROW -->
+                    <div class="container is-flex">
+                        <div class="field column is-6">
+                            <label class="label">Full Name</label>
+                            <div class="control">
+                            <input id="c_name" class="input" type="text" placeholder="Customer Name" autocomplete="off">
+                            </div>
+                        </div>
+            
+                        <div class="field column is-6">
+                            <label class="label">Email</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input id="c_email" class="input" type="email" placeholder="Email input" value="" autocomplete="off">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phone & Address Row -->
+                    <div class="container is-flex">
+
+                        <div class="field column is-6">
+                            <label class="label">Phone</label>
+                            <div class="control has-icons-left">
+                            <input id="c_phone" class="input" type="tel" placeholder="(+263)-(000)-(000)-(000)" maxlength="13" autocomplete="off">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                            </div>
+                        </div>
+
+                        <div class="field column is-6">
+                            <label class="label">Address</label>
+                            <div class="control has-icons-left">
+                            <input id="c_address" class="input" type="text" placeholder="" autocomplete="off">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-address-card"></i>
+                            </span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+
+                    <!-- Subscription plan & Payment Method -->
+                    <div class="container is-flex">
+
+                        <div class="field column is-6">
+                            <label class="label">Subscription Plan</label>
+                            <div class="control">
+                            <div class="select">
+                                <select id="subs">
+                                    <option>Individual</option>
+                                    <option>Premium</option>
+                                    <option>Enterprise</option>
+                                </select>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="field column is-6">
+                            <label class="label">Payment Method</label>
+                            <div class="control">
+                            <div class="select">
+                                <select id="pay">
+                                    <option>Cash</option>
+                                    <option>Paypal</option>
+                                    <option>Transfer</option>
+                                    <option>BitPay</option>
+                                </select>
+                            </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- Form Submit Button -->
+                    <div class="container is-flex is-justify-content-center mt-5">
+                        <input type="submit" class="button is-dark is-fullwidth" value="Submit" id="customer-btn">
+                    </div>
+            </div>
+            <button class="modal-close is-large has-background-danger" id="modal-close"></button>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
