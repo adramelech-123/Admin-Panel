@@ -31,7 +31,7 @@ The app looks almost similar to the example images below:
 ### Snippets of the autoupdate Javascript code
 
 
-```
+```javascript
 function generateRows () {
     let tableRows = document.querySelectorAll('.row')
     arrayofRows = Array.from(tableRows) //Change nodelist tableRows to array
@@ -39,7 +39,7 @@ function generateRows () {
 ```
 
 Invoking the generateRows function and iterating over the array of rows to update the Row index values
-```
+```javascript
 generateRows()
         
         for (i=0; i<arrayofRows.length; i++) {
